@@ -16,7 +16,7 @@ FoamFile
 
 // Which of the steps to run
 castellatedMesh true;
-snap            false;
+snap            true;
 addLayers       false;
 
 
@@ -180,16 +180,16 @@ castellatedMeshControls
         */
         shell
         {
-            level           (1 1);
+            level           (3 3);
             
             regions
             {
-                shell_inlet           { level (1 1); patchInfo { type patch; } }
-                shell_outlet           { level (1 1); patchInfo { type patch; } }
-                shell_external           { level (1 1); patchInfo { type wall; } }
-            solid_external        { level (1 1); patchInfo { type wall; } }
-            tube_inlet     { level (1 1); patchInfo { type patch; }  }
-            tube_outlet        { level (1 1); patchInfo { type patch; } }  
+                shell_inlet           { level (3 3); patchInfo { type patch; } }
+                shell_outlet           { level (3 3); patchInfo { type patch; } }
+                shell_external           { level (3 3); patchInfo { type wall; } }
+            solid_external        { level (3 3); patchInfo { type wall; } }
+            tube_inlet     { level (3 3); patchInfo { type patch; }  }
+            tube_outlet        { level (3 3); patchInfo { type patch; } }  
 //            tube_external           { level (1 1); patchInfo { type wall; } }        
 //            tube_to_solid           { level (1 1); patchInfo { type wall; } }              
 //            shell_to_solid           { level (1 1); patchInfo { type wall; } }                                    
@@ -202,7 +202,7 @@ castellatedMeshControls
 
         tube_to_solid
         {
-            level           (1 1);
+            level           (3 3);
            faceZone        tube_to_solid;
             cellZone        tube;
             cellZoneInside  insidePoint;
@@ -212,7 +212,7 @@ castellatedMeshControls
         
         shell_to_solid
         {
-            level           (1 1);
+            level           (3 3);
             faceZone        shell_to_solid;
             cellZone        shell;
             cellZoneInside  insidePoint;
